@@ -68,8 +68,11 @@ public class PalindromoAir{
             
         }
         if(asientos[i]== null){
-            double precio= TicketPrecio
-            
+            double precio= TicketPrecio;
+            if ( isPalindromo(name,0,name.length()-1)){
+            precio-= (0.2)*TicketPrecio;
+                    }
+                    asientos[i]
         }
         
     }
