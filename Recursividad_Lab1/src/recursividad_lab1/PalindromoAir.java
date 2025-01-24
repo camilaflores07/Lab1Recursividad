@@ -45,7 +45,7 @@ public class PalindromoAir{
         return; 
     }
     if (asientos[i] != null) {
-        System.out.println(asientos[i].getNombrePasajero() + " - " + TicketPrecio);
+       JOptionPane.showMessageDialog(null, asientos[i].getNombrePasajero() + " - " + TicketPrecio);
     }
     printPassengers(i + 1);
     }

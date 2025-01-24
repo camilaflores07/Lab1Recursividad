@@ -144,14 +144,7 @@ public class GUI {
        btnDespachar = btnPersonalizar(btnDespachar, "Despachar");
        panel2.add(btnDespachar);
        
-       btnDespachar.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-        frame2.dispose();
-        frameDespachar.setVisible(true);
-        }
-        });
-       
+      
        labelDespachar = hacerLabelTitulo(labelDespachar, "Despachar");
        panelDespachar.add(labelDespachar);
        
