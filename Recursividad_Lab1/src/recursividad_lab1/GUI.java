@@ -17,18 +17,30 @@ import javax.swing.*;
 public class GUI {
    static JFrame frame2 = new JFrame();
    static JFrame frame1 = new JFrame();
+   static JFrame frameVender = new JFrame();
+   static JFrame frameBuscar  = new JFrame();
    static JPanel panel1 = new JPanel();
    static JPanel panel2 = new JPanel();
+   static JPanel panelVender = new JPanel();
+   static JPanel panelBuscar = new JPanel();
    static JButton btnSalir = new JButton();
    static JButton btnVender = new JButton();
    static JButton btnCancelar = new JButton();
    static JButton btnBuscarPasajero = new JButton();
    static JButton btnImprimirPasajeros = new JButton();
    static JButton btnReset = new JButton();
-   static JButton btnDespegar = new JButton();
+   static JButton btnDespachar = new JButton();
    static JButton btnOk = new JButton();
    static JLabel labelNombre = new JLabel();
+   static JLabel labelVender = new JLabel();
+   static JLabel labelBuscar = new JLabel();
    static JTextField fieldNombre = new JTextField();
+   static JFrame frameImprimir = new JFrame();
+   static JPanel panelImprimir = new JPanel();
+   static JLabel labelImprimir = new JLabel();
+   static JFrame frameDespachar = new JFrame();
+   static JPanel panelDespachar = new JPanel();
+   static JLabel labelDespachar = new JLabel();
    
    
    public static JButton btnPersonalizar(JButton btn, String texto){
@@ -47,37 +59,113 @@ public class GUI {
    frame.setTitle("Lab 1: Recursividad");
    frame.setSize(500,500);
    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//   frame.setLayout(new BorderLayout());
  
    return frame;
    }
    
+   public static JLabel hacerLabelTitulo(JLabel label, String text){
+    
+    label.setText(text);
+    label.setHorizontalAlignment(JLabel.CENTER);
+    label.setVerticalAlignment(JLabel.CENTER);
+    label.setForeground(Color.PINK);
+    label.setFont(new Font("Arial" , Font.BOLD, 40));
+    
+    return label;
+    }
+   
+   
    public static void pantallaInicio(){
        frame2 = framePersonalizar(frame2);
-       panel2 = new JPanel(new GridLayout(5,1,10,10));
+       panel2 = new JPanel(new GridLayout(4,1,10,10));
        panel2.setBackground(Color.WHITE);
        frame2.add(panel2);
        
-       btnVender = btnPersonalizar(btnVender, "Buscar Asiento Vacio");
+       
+       //VENDER
+       btnVender = btnPersonalizar(btnVender, "Vender");
        panel2.add(btnVender);
        
-       btnCancelar = btnPersonalizar(btnCancelar, "Cancelar boleto");
-       panel2.add(btnCancelar);
+       labelVender = hacerLabelTitulo(labelVender, "Vender");
+       panelVender.add(labelVender);
+ 
+       btnVender.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        frame2.dispose();
+        frameVender.setVisible(true);
+        }
+        });
+       
+        frameVender = framePersonalizar(frameVender);
+        panelVender.setForeground(Color.WHITE);
+        frameVender.add(panelVender);
+       
+       //BUSCAR PASAJERO
+       frameBuscar = framePersonalizar(frameBuscar);
+       panelBuscar.setForeground(Color.WHITE);
+       frameBuscar.add(panelBuscar);
        
        btnBuscarPasajero = btnPersonalizar(btnBuscarPasajero, "Buscar pasajero");
        panel2.add(btnBuscarPasajero);
        
-       btnImprimirPasajeros= btnPersonalizar(btnImprimirPasajeros, "Imprimir pasajeros");
+       btnBuscarPasajero.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        frame2.dispose();
+        frameBuscar.setVisible(true);
+        }
+        });
+       
+       labelBuscar = hacerLabelTitulo(labelBuscar, "Buscar Pasajeros");
+       panelBuscar.add(labelBuscar);
+       
+        
+       //IMPRIMIR PASAJEROS
+       frameImprimir = framePersonalizar(frameImprimir);
+       panelImprimir.setForeground(Color.WHITE);
+       frameImprimir.add(panelImprimir);
+       
+       btnImprimirPasajeros = btnPersonalizar(btnImprimirPasajeros, "Imprimir Pasajeros");
        panel2.add(btnImprimirPasajeros);
        
-       btnDespegar= btnPersonalizar(btnDespegar,"Despegar");
-       panel2.add(btnDespegar);
+       btnImprimirPasajeros.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        frame2.dispose();
+        frameImprimir.setVisible(true);
+        }
+        });
+       
+       labelImprimir = hacerLabelTitulo(labelBuscar, "Imprimir Pasajeros");
+       panelImprimir.add(labelImprimir);
+       
+       //DESPACHAR
+       frameDespachar = framePersonalizar(frameDespachar);
+       panelDespachar.setForeground(Color.WHITE);
+       frameDespachar.add(panelDespachar);
+       
+       btnDespachar = btnPersonalizar(btnDespachar, "Despachar");
+       panel2.add(btnDespachar);
+       
+       btnDespachar.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        frame2.dispose();
+        frameDespachar.setVisible(true);
+        }
+        });
+       
+       labelDespachar = hacerLabelTitulo(labelDespachar, "Despachar");
+       panelDespachar.add(labelDespachar);
        
        frame2.setVisible(true);
        
+       
+       
    
    }
-   
+  
    public static void pantallaNombre(){
    
    
