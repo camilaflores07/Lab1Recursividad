@@ -50,6 +50,7 @@ public class PalindromoAir{
     printPassengers(i + 1);
     }
     
+    
     public double income(int i){
         if (i >= asientos.length) {
         return 0; 
@@ -59,6 +60,14 @@ public class PalindromoAir{
         }
         return i +1;  
         }
+    
+    public void reset(int i) {
+    if (i >= asientos.length) {
+        return;
+    }
+    asientos[i] = null; 
+    reset(i + 1); 
+}
     
     public void sellTicket(String name, int i){
         if (i>= asientos.length) {
@@ -78,9 +87,7 @@ public class PalindromoAir{
          sellTicket(name,(i+1));
         
     }
-    
-//    public boolean cancelTicket(String name){
-//    }
+ 
     
     public void dispatch(){
     }
