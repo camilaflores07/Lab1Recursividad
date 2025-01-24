@@ -84,6 +84,7 @@ public class PalindromoAir{
                     }
                     asientos[i]=new Ticket(name,precio);
                      JOptionPane.showMessageDialog(null, "Ticket vendido para " + name + ". Total a pagar: $" + precio);
+                     return;
         }
          sellTicket(name, (i+1));
         
