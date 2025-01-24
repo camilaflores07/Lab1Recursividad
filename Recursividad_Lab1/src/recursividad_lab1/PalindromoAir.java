@@ -1,3 +1,5 @@
+package recursividad_lab1;
+
 
 import recursividad_lab1.Ticket;
 
