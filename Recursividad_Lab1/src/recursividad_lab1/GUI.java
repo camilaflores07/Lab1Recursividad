@@ -36,11 +36,12 @@ public class GUI {
    static JLabel labelBuscar = new JLabel();
    static JTextField fieldNombre = new JTextField();
    static JFrame frameImprimir = new JFrame();
-   static JPanel panelImprimir = new JPanel();
+   static JPanel panelImprimir = new JPanel(new GridLayout(2,1,10,10));
    static JLabel labelImprimir = new JLabel();
    static JFrame frameDespachar = new JFrame();
    static JPanel panelDespachar = new JPanel();
    static JLabel labelDespachar = new JLabel();
+   static JLabel labelPasajerosImpresos = new JLabel();
    
    
    public static JButton btnPersonalizar(JButton btn, String texto){
@@ -74,10 +75,20 @@ public class GUI {
     return label;
     }
    
+   public static JLabel hacerLabel(JLabel label){
+    
+    label.setHorizontalAlignment(JLabel.CENTER);
+    label.setVerticalAlignment(JLabel.CENTER);
+    label.setForeground(Color.BLACK);
+    label.setFont(new Font("Arial" , Font.PLAIN, 20));
+    
+    return label;
+    }
    
    public static void pantallaInicio(){
        frame2 = framePersonalizar(frame2);
        panel2 = new JPanel(new GridLayout(4,1,10,10));
+       panelBuscar.setBackground(Color.WHITE);
        panel2.setBackground(Color.WHITE);
        frame2.add(panel2);
        
@@ -89,13 +100,7 @@ public class GUI {
        labelVender = hacerLabelTitulo(labelVender, "Vender");
        panelVender.add(labelVender);
  
-       btnVender.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-        frame2.dispose();
-        frameVender.setVisible(true);
-        }
-        });
+       
        
         frameVender = framePersonalizar(frameVender);
         panelVender.setForeground(Color.WHITE);
@@ -106,19 +111,14 @@ public class GUI {
        panelBuscar.setForeground(Color.WHITE);
        frameBuscar.add(panelBuscar);
        
-       btnBuscarPasajero = btnPersonalizar(btnBuscarPasajero, "Buscar pasajero");
+       btnBuscarPasajero = btnPersonalizar(btnBuscarPasajero, "Buscar Pasajeros");
        panel2.add(btnBuscarPasajero);
        
-       btnBuscarPasajero.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-        frame2.dispose();
-        frameBuscar.setVisible(true);
-        }
-        });
        
-       labelBuscar = hacerLabelTitulo(labelBuscar, "Buscar Pasajeros");
+       labelBuscar = hacerLabelTitulo(labelBuscar, "Imprimir Pasajeros");
        panelBuscar.add(labelBuscar);
+       
+      
        
         
        //IMPRIMIR PASAJEROS
@@ -129,16 +129,12 @@ public class GUI {
        btnImprimirPasajeros = btnPersonalizar(btnImprimirPasajeros, "Imprimir Pasajeros");
        panel2.add(btnImprimirPasajeros);
        
-       btnImprimirPasajeros.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-        frame2.dispose();
-        frameImprimir.setVisible(true);
-        }
-        });
        
        labelImprimir = hacerLabelTitulo(labelBuscar, "Imprimir Pasajeros");
        panelImprimir.add(labelImprimir);
+       
+       labelPasajerosImpresos= hacerLabel(labelPasajerosImpresos);
+       panelImprimir.add(labelPasajerosImpresos);
        
        //DESPACHAR
        frameDespachar = framePersonalizar(frameDespachar);
@@ -166,6 +162,7 @@ public class GUI {
    
    }
   
+ 
    public static void pantallaNombre(){
    
    
