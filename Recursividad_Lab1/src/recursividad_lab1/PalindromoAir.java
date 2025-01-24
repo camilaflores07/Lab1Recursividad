@@ -2,7 +2,6 @@ package recursividad_lab1;
 
 
 import javax.swing.JOptionPane;
-import recursividad_lab1.Ticket;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -79,7 +78,7 @@ public class PalindromoAir{
         }
         if(asientos[i]== null){
             double precio= TicketPrecio;
-            double pricio = 800;
+            precio = 800;
             if ( isPalindromo(name,0,name.length()-1)){
             precio-= (0.2)*TicketPrecio;
                     }
@@ -90,8 +89,23 @@ public class PalindromoAir{
         
     }
  
-    
-    public void dispatch(){
+     public boolean cancelTicket(String name, int i) {
+        if (i >= asientos.length) return false;
+        if (asientos[i] != null && asientos[i].getNombrePasajero().equals(name)) {
+            asientos[i] = null;
+            return true;
+        }
+        return cancelTicket(name, i + 1);
     }
+     
+      public void dispatch() {
+    double totalIncome = income(0); 
+    JOptionPane.showMessageDialog(null, "Ingreso total: $" + totalIncome);
+
+    reset(0);
+
+    JOptionPane.showMessageDialog(null, "El avión ha sido despachado. Todos los asientos estan vacios.");
 }
+}
+   
    
