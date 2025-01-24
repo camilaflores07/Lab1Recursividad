@@ -37,17 +37,33 @@ public class PalindromoAir{
     if (name.charAt(start) != name.charAt(end)) {
         return false;
     }
-    
     return isPalindromo(name, start + 1, end - 1); 
     }
     
-    public void printPassengers(){
+    public void printPassengers(int i){
+       if (i >= asientos.length) {
+        return; 
+    }
+    if (asientos[i] != null) {
+        System.out.println(asientos[i].getNombrePasajero() + " - " + TicketPrecio);
+    }
+    printPassengers(i + 1);
     }
     
-    public double income(){
+    public double income(int i){
+        if (i >= asientos.length) {
+        return 0; 
     }
+        if (asientos[i] != null) {
+            return TicketPrecio + income(i + 1);
+        }
+        return i +1;  
+        }
     
     public void sellTicket(String name){
+        if (true) {
+            
+        }
     }
     
     public boolean cancelTicket(String name){
