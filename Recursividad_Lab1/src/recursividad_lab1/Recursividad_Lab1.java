@@ -7,6 +7,9 @@ package recursividad_lab1;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import static recursividad_lab1.GUI.btnDespachar;
+import static recursividad_lab1.GUI.frame2;
+import static recursividad_lab1.GUI.frameDespachar;
 
 /**
  *
@@ -54,12 +57,23 @@ public class Recursividad_Lab1 {
             else{
             GUI.frameVender.setVisible(false);
             GUI.frame2.setVisible(true);
+            
             }
+        
             
         }
         
         
-        });
         
+        });
+        btnDespachar.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+        frame2.dispose();
+        frameDespachar.setVisible(true);
+        PalindromoAir.dispatch();
+        }
+        });
+       
     
 }}
