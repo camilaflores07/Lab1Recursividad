@@ -81,8 +81,8 @@ public class PalindromoAir{
         
     }
     
-    public boolean cancelTicket(String name){
-    }
+//    public boolean cancelTicket(String name){
+//    }
     
     public void dispatch(){
     }
