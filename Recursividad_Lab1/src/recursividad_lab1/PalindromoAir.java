@@ -98,7 +98,14 @@ public class PalindromoAir{
         return cancelTicket(name, i + 1);
     }
      
-    public void dispatch(){
-    }
+      public void dispatch() {
+    double totalIncome = income(0); 
+    JOptionPane.showMessageDialog(null, "Ingreso total: $" + totalIncome);
+
+    reset(0);
+
+    JOptionPane.showMessageDialog(null, "El avión ha sido despachado. Todos los asientos estan vacios.");
 }
+}
+   
    
