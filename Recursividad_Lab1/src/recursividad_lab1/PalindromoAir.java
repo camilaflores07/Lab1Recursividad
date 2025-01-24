@@ -1,6 +1,7 @@
 package recursividad_lab1;
 
 
+import javax.swing.JOptionPane;
 import recursividad_lab1.Ticket;
 
 /*
@@ -71,20 +72,21 @@ public class PalindromoAir{
     
     public void sellTicket(String name, int i){
         if (i>= asientos.length) {
-
-            System.out.println("No hay sillas disponibles");
+            JOptionPane.showMessageDialog(null, "No hay asientos disponibles");
+            return;
             
             
         }
         if(asientos[i]== null){
             double precio= TicketPrecio;
+            double pricio = 800;
             if ( isPalindromo(name,0,name.length()-1)){
             precio-= (0.2)*TicketPrecio;
                     }
                     asientos[i]=new Ticket(name,precio);
-                    System.out.println("Ticket vendido a " + name + " en el asiento " + i + " por $" + precio);
+                     JOptionPane.showMessageDialog(null, "Ticket vendido para " + name + ". Total a pagar: $" + precio);
         }
-         sellTicket(name,(i+1));
+         sellTicket(name, (i+1));
         
     }
  
