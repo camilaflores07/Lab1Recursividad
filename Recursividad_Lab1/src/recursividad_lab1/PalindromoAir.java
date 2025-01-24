@@ -71,13 +71,11 @@ public class PalindromoAir{
             double precio= TicketPrecio;
             if ( isPalindromo(name,0,name.length()-1)){
             precio-= (0.2)*TicketPrecio;
-            
-            
-            
-            
                     }
-                    asientos[i]
+                    asientos[i]=new Ticket(name,precio);
+                    System.out.println("Ticket vendido a " + name + " en el asiento " + i + " por $" + precio);
         }
+         sellTicket(name,(i+1));
         
     }
     
