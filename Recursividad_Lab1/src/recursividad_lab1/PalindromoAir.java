@@ -60,10 +60,18 @@ public class PalindromoAir{
         return i +1;  
         }
     
-    public void sellTicket(String name){
-        if (true) {
+    public void sellTicket(String name, int i){
+        if (i>= asientos.length) {
+
+            System.out.println("No hay sillas disponibles");
+            
             
         }
+        if(asientos[i]== null){
+            double precio= TicketPrecio
+            
+        }
+        
     }
     
     public boolean cancelTicket(String name){
