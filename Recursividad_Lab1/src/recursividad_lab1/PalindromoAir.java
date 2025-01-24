@@ -2,7 +2,6 @@ package recursividad_lab1;
 
 
 import javax.swing.JOptionPane;
-import recursividad_lab1.Ticket;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -90,7 +89,15 @@ public class PalindromoAir{
         
     }
  
-    
+     public boolean cancelTicket(String name, int i) {
+        if (i >= asientos.length) return false;
+        if (asientos[i] != null && asientos[i].getNombrePasajero().equals(name)) {
+            asientos[i] = null;
+            return true;
+        }
+        return cancelTicket(name, i + 1);
+    }
+     
     public void dispatch(){
     }
 }
